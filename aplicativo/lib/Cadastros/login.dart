@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../rotas.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -6,21 +7,21 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1B38), 
+      backgroundColor: const Color(0xFF1E1B38),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     icon: const Icon(Icons.arrow_back, color: Colors.white70),
-                    onPressed: () {},
+                    onPressed: () => Navigator.pop(context),
                   ),
-                  const Icon(Icons.camera_alt, color: Colors.black, size: 20),
                   Row(
                     children: const [
                       Icon(Icons.pie_chart, color: Colors.cyan, size: 18),
@@ -38,7 +39,6 @@ class LoginScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 40),
-              
               const Center(
                 child: Text(
                   'LOGAR',
@@ -51,7 +51,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 60),
-              
               const TextField(
                 style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
@@ -66,7 +65,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              
               const TextField(
                 obscureText: true,
                 style: TextStyle(color: Colors.white),
@@ -82,7 +80,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const Spacer(),
-            
               SizedBox(
                 width: double.infinity,
                 height: 48,
@@ -93,7 +90,9 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Ação de cadastro futura
+                  },
                   child: const Text(
                     'CADASTRAR-SE',
                     style: TextStyle(
@@ -105,7 +104,6 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              
               Container(
                 width: double.infinity,
                 height: 48,
@@ -123,7 +121,9 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, RotasApp.inicio);
+                  },
                   child: const Text(
                     'Login',
                     style: TextStyle(
