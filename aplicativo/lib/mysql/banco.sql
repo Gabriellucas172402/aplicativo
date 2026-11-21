@@ -9,6 +9,17 @@ CREATE TABLE usuarios (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
+CREATE TABLE IF NOT EXISTS projetos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT,
+    nome_projeto VARCHAR(150) NOT NULL,
+    data_viagem VARCHAR(50),
+    status VARCHAR(50) DEFAULT 'Ativo',
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
 CREATE TABLE moedas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     codigo VARCHAR(10) NOT NULL UNIQUE,
