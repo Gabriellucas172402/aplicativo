@@ -5,6 +5,7 @@ import 'Sobre nós/saiba_mais.dart';
 import 'Sobre nós/contato.dart';
 import 'Cadastros/login.dart';
 import 'Viagens/menu_viagens.dart';
+import 'Viagens/agendamentos_page.dart';
 import 'inicio.dart';
 
 class RotasApp {
@@ -15,6 +16,7 @@ class RotasApp {
   static const String contato = '/contato';
   static const String login = '/login';
   static const String menuViagens = '/menu-viagens';
+  static const String agendamentos = '/agendamentos';
 
   static Route<dynamic> gerarRotas(RouteSettings settings) {
     switch (settings.name) {
@@ -32,6 +34,8 @@ class RotasApp {
         return MaterialPageRoute(builder: (_) => const LoginScreen());
       case menuViagens:
         return MaterialPageRoute(builder: (_) => const MenuViagensPage());
+      case agendamentos:
+        return MaterialPageRoute(builder: (_) => const AgendamentosPage());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
