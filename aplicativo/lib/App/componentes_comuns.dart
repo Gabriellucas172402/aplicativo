@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'rotas.dart';
+import 'rotas.dart'
 
 const Color roxo = Color(0xFF1E1B38);
 const Color roxoEscuro = Color(0xFF0A083A);
